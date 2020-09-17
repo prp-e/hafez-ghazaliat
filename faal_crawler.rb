@@ -10,34 +10,27 @@ for ghazal_id in 0..494 do
         events_handler = doc.css("div.int-body")
         
         events_handler.each do |e|
-            faal << e.css("p")
+            faal << e.css("p").text
             puts "Working on #{ghazal_id}"
-            puts e.css("p")
         end
     elsif ghazal_id < 100
         doc = Nokogiri::HTML(open("http://hafez-fal.ir/ghazal/0#{ghazal_id}"))
         events_handler = doc.css("div.int-body")
         
         events_handler.each do |e|
-            faal << e.css("p")
+            faal << e.css("p").text
             puts "Working on #{ghazal_id}"
-            puts e.css("p")
         end 
     else 
         doc = Nokogiri::HTML(open("http://hafez-fal.ir/ghazal/#{ghazal_id}"))
         events_handler = doc.css("div.int-body")
         
         events_handler.each do |e|
-            faal << e.css("p")
+            faal << e.css("p").text
             puts "Working on #{ghazal_id}"
-            puts e.css("p")
         end
     end
-    sleep 5
+    sleep 3
 end 
 
-faal_text = File.open("faal.html", "w")
-
-faal.each do |f| 
-    faal_text.writeline(f + "<br/><br/>")
-end 
+puts faal 
