@@ -35,7 +35,7 @@ end
 
 final_file = File.open("faal.txt", "w")
 
-faal.each |f| do
+faal.each do |f|
     final_file.writeline(f + "\n")
 end
 
