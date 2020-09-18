@@ -36,7 +36,7 @@ end
 final_file = File.open("faal.txt", "w")
 
 faal.each |f| do
-    final_file.write(f + "\n")
+    final_file.writeline(f + "\n")
 end
 
 final_file.close()
