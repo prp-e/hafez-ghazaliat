@@ -33,4 +33,10 @@ for ghazal_id in 0..494 do
     sleep 3
 end 
 
-puts faal 
+final_file = File.open("faal.txt", "w")
+
+faal.each |f| do
+    final_file.write(f + "\n")
+end
+
+final_file.close()
